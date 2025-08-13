@@ -13,10 +13,10 @@ import Image from "next/image"
 
 export default function DonatePage() {
   const [donationType, setDonationType] = useState('one-time')
-  const [amount, setAmount] = useState('50')
+  const [amount, setAmount] = useState('5000')
   const [customAmount, setCustomAmount] = useState('')
 
-  const predefinedAmounts = ['25', '50', '100', '250', '500', '1000']
+  const predefinedAmounts = ['2500', '5000', '10000', '25000', '50000', '100000']
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -69,7 +69,7 @@ export default function DonatePage() {
 
                 {/* Amount Selection */}
                 <div>
-                  <Label className="text-base font-medium mb-3 block">Select Amount (USD)</Label>
+                  <Label className="text-base font-medium mb-3 block">Select Amount (NGN)</Label>
                   <div className="grid grid-cols-3 gap-3 mb-4">
                     {predefinedAmounts.map((presetAmount) => (
                       <Button
@@ -81,7 +81,7 @@ export default function DonatePage() {
                           setCustomAmount('')
                         }}
                       >
-                        ${presetAmount}
+                        ₦{parseInt(presetAmount).toLocaleString()}
                       </Button>
                     ))}
                   </div>
@@ -173,7 +173,7 @@ export default function DonatePage() {
                   className="w-full bg-amber-600 hover:bg-amber-700 text-lg py-6"
                 >
                   <Heart className="w-5 h-5 mr-2" />
-                  Donate ${customAmount || amount} {donationType === 'monthly' ? 'Monthly' : 'Now'}
+                  Donate ₦{customAmount ? parseInt(customAmount).toLocaleString() : parseInt(amount).toLocaleString()} {donationType === 'monthly' ? 'Monthly' : 'Now'}
                 </Button>
 
                 <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
@@ -195,21 +195,21 @@ export default function DonatePage() {
                 <div className="flex items-start space-x-3">
                   <GraduationCap className="w-5 h-5 text-amber-600 mt-1" />
                   <div>
-                    <div className="font-medium">$25</div>
+                    <div className="font-medium">₦2,500</div>
                     <div className="text-sm text-gray-600">Provides school supplies for one child</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Heart className="w-5 h-5 text-amber-600 mt-1" />
                   <div>
-                    <div className="font-medium">$50</div>
+                    <div className="font-medium">₦5,000</div>
                     <div className="text-sm text-gray-600">Covers healthcare for one child for a month</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Home className="w-5 h-5 text-amber-600 mt-1" />
                   <div>
-                    <div className="font-medium">$100</div>
+                    <div className="font-medium">₦10,000</div>
                     <div className="text-sm text-gray-600">Provides safe housing support for a family</div>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export default function DonatePage() {
                   </div>
                   <div>
                     <div className="font-medium text-sm">Anonymous</div>
-                    <div className="text-xs text-gray-600">Donated $100 • 2 hours ago</div>
+                    <div className="text-xs text-gray-600">Donated ₦10,000 • 2 hours ago</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -237,7 +237,7 @@ export default function DonatePage() {
                   </div>
                   <div>
                     <div className="font-medium text-sm">Sarah M.</div>
-                    <div className="text-xs text-gray-600">Donated $50 • 5 hours ago</div>
+                    <div className="text-xs text-gray-600">Donated ₦5,000 • 5 hours ago</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -246,7 +246,7 @@ export default function DonatePage() {
                   </div>
                   <div>
                     <div className="font-medium text-sm">Michael K.</div>
-                    <div className="text-xs text-gray-600">Donated $250 • 1 day ago</div>
+                    <div className="text-xs text-gray-600">Donated ₦25,000 • 1 day ago</div>
                   </div>
                 </div>
               </CardContent>

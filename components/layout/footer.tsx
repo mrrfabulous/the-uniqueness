@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/icon.png"
                 alt="The Unique & Safe Child Foundation"
                 width={40}
                 height={40}
@@ -49,10 +49,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="text-gray-300 hover:text-amber-400 transition-colors">About Us</Link></li>
               <li><Link href="/programs" className="text-gray-300 hover:text-amber-400 transition-colors">Programs</Link></li>
-              <li><Link href="/impact" className="text-gray-300 hover:text-amber-400 transition-colors">Impact</Link></li>
               <li><Link href="/volunteer" className="text-gray-300 hover:text-amber-400 transition-colors">Volunteer</Link></li>
               <li><Link href="/events" className="text-gray-300 hover:text-amber-400 transition-colors">Events</Link></li>
-              <li><Link href="/news" className="text-gray-300 hover:text-amber-400 transition-colors">News</Link></li>
             </ul>
           </div>
 
@@ -63,8 +61,6 @@ export default function Footer() {
               <li><Link href="/donate" className="text-gray-300 hover:text-amber-400 transition-colors">Donate</Link></li>
               <li><Link href="/store" className="text-gray-300 hover:text-amber-400 transition-colors">Store</Link></li>
               <li><Link href="/sponsor" className="text-gray-300 hover:text-amber-400 transition-colors">Sponsor a Child</Link></li>
-              <li><Link href="/corporate" className="text-gray-300 hover:text-amber-400 transition-colors">Corporate Partners</Link></li>
-              <li><Link href="/fundraise" className="text-gray-300 hover:text-amber-400 transition-colors">Fundraise</Link></li>
             </ul>
           </div>
 
@@ -74,11 +70,11 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-amber-400" />
-                <span className="text-gray-300">Lagos, Nigeria</span>
+                <span className="text-gray-300">Abuja, Nigeria</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-amber-400" />
-                <span className="text-gray-300">+234 XXX XXX XXXX</span>
+                <span className="text-gray-300">+234 816 871 2903</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-amber-400" />

@@ -198,7 +198,7 @@ export default function StorePage() {
               <CardContent className="pt-0">
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-bold text-amber-600">
-                    ${product.price}
+                    ₦{product.price}
                   </div>
                   <Button 
                     size="sm" 
