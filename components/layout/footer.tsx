@@ -49,8 +49,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="text-gray-300 hover:text-amber-400 transition-colors">About Us</Link></li>
               <li><Link href="/programs" className="text-gray-300 hover:text-amber-400 transition-colors">Programs</Link></li>
-              <li><Link href="/volunteer" className="text-gray-300 hover:text-amber-400 transition-colors">Volunteer</Link></li>
-              <li><Link href="/events" className="text-gray-300 hover:text-amber-400 transition-colors">Events</Link></li>
+              {/* <li><Link href="/volunteer" className="text-gray-300 hover:text-amber-400 transition-colors">Volunteer</Link></li>
+              <li><Link href="/events" className="text-gray-300 hover:text-amber-400 transition-colors">Events</Link></li> */}
             </ul>
           </div>
 
@@ -59,7 +59,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Support</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/donate" className="text-gray-300 hover:text-amber-400 transition-colors">Donate</Link></li>
-              <li><Link href="/store" className="text-gray-300 hover:text-amber-400 transition-colors">Store</Link></li>
+              {/* <li><Link href="/store" className="text-gray-300 hover:text-amber-400 transition-colors">Store</Link></li> */}
               <li><Link href="/sponsor" className="text-gray-300 hover:text-amber-400 transition-colors">Sponsor a Child</Link></li>
             </ul>
           </div>

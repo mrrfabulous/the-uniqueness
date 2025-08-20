@@ -55,7 +55,7 @@ export default function NotFound() {
           </div>
 
           {/* Helpful Links */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             <Card className="group hover:shadow-lg transition-all duration-300 border border-amber-100">
               <CardHeader className="pb-4">
                 <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-3 group-hover:bg-amber-600 transition-colors">
@@ -75,7 +75,7 @@ export default function NotFound() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border border-amber-100">
+            {/* <Card className="group hover:shadow-lg transition-all duration-300 border border-amber-100">
               <CardHeader className="pb-4">
                 <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-3 group-hover:bg-amber-600 transition-colors">
                   <Users className="w-6 h-6 text-amber-600 group-hover:text-white transition-colors" />
@@ -92,7 +92,7 @@ export default function NotFound() {
                   </Link>
                 </Button>
               </CardContent>
-            </Card>
+            </Card> */}
 
             <Card className="group hover:shadow-lg transition-all duration-300 border border-amber-100">
               <CardHeader className="pb-4">

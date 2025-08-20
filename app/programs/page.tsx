@@ -52,7 +52,7 @@ export default function ProgramsPage() {
       title: "Education Support",
       icon: BookOpen,
       description: "Providing quality education and learning opportunities for underprivileged children",
-      image: "/images/education-program.jpg",
+      image: "/images/outreach.jpg",
       stats: [
         { number: "150+", label: "Students Supported" },
         { number: "25", label: "Schools Partnered" },
@@ -72,7 +72,7 @@ export default function ProgramsPage() {
       title: "Healthcare",
       icon: Heart,
       description: "Ensuring access to essential healthcare services and medical support",
-      image: "/images/healthcare-program.jpg",
+      image: "/images/outreach-1.jpg",
       stats: [
         { number: "500+", label: "Children Treated" },
         { number: "12", label: "Health Centers" },
@@ -92,7 +92,7 @@ export default function ProgramsPage() {
       title: "Safe Housing",
       icon: Home,
       description: "Creating safe, secure living environments for children in need",
-      image: "/images/housing-program.jpg",
+      image: "/images/outreach-2.jpg",
       stats: [
         { number: "75", label: "Children Housed" },
         { number: "8", label: "Safe Homes" },
@@ -112,7 +112,7 @@ export default function ProgramsPage() {
       title: "Nutrition",
       icon: Utensils,
       description: "Fighting malnutrition and ensuring proper dietary support for healthy development",
-      image: "/images/nutrition-program.jpg",
+      image: "/images/outreach-3.jpg",
       stats: [
         { number: "300+", label: "Daily Meals" },
         { number: "85%", label: "Nutrition Improvement" },
@@ -305,7 +305,7 @@ export default function ProgramsPage() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button className="bg-amber-600 hover:bg-amber-700" asChild>
-                      <Link href="/volunteer">
+                      <Link href="/donate">
                         Get Involved
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
@@ -390,17 +390,7 @@ export default function ProgramsPage() {
                 </Link>
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button size="lg" variant="outline" className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-4 text-lg" asChild>
-                <Link href="/volunteer">
-                  <Users className="w-5 h-5 mr-2" />
-                  Become a Volunteer
-                </Link>
-              </Button>
-            </motion.div>
+          
           </motion.div>
         </div>
       </section>

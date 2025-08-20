@@ -159,7 +159,7 @@ export default function StorePage() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mb-10">
           {filteredProducts.map((product) => (
             <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden">
               <div className="relative overflow-hidden">

@@ -39,7 +39,7 @@ export default function Header() {
         { name: "Nutrition", href: "/programs#nutrition" },
       ],
     },
-    { name: "Events", href: "/events" },
+    // { name: "Events", href: "/events" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -123,7 +123,7 @@ export default function Header() {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-1 sm:space-x-2">
-            <Button
+            {/* <Button
               variant="ghost"
               size="sm"
               asChild
@@ -144,7 +144,7 @@ export default function Header() {
                 <ShoppingBag className="w-4 h-4" />
                 <span className="sr-only">Store</span>
               </Link>
-            </Button>
+            </Button> */}
             <Button
               size="sm"
               className="bg-amber-600 hover:bg-amber-700 text-white transition-colors duration-200"
@@ -235,7 +235,7 @@ export default function Header() {
                     
                     {/* Mobile Action Items */}
                     <div className="pt-4 mt-4 border-t border-gray-200 space-y-2">
-                      <Link
+                      {/* <Link
                         href="/volunteer"
                         className="flex items-center py-3 px-2 text-gray-700 hover:text-amber-700 hover:bg-amber-50 rounded-md transition-colors duration-200"
                         onClick={() => setIsOpen(false)}
@@ -250,7 +250,7 @@ export default function Header() {
                       >
                         <ShoppingBag className="w-4 h-4 mr-3" />
                         Store
-                      </Link>
+                      </Link> */}
                       <Link
                         href="/donate"
                         className="flex items-center justify-center py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white rounded-md transition-colors duration-200 font-medium"

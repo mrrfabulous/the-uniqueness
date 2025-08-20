@@ -52,7 +52,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/hero-bg.png"
+          src="/images/hero.jpg"
           alt="Children playing and learning"
           fill
           className="object-cover"
@@ -191,7 +191,7 @@ export default function HomePage() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/images/outreach-1.jpeg"
+                  src="/images/team1.jpg"
                   alt="Foundation team with children"
                   width={600}
                   height={500}
@@ -258,7 +258,7 @@ export default function HomePage() {
                     Providing school supplies, uniforms, scholarships, and educational resources to ensure children can attend and succeed in school.
                   </CardDescription>
                   <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0" asChild>
-                    <Link href="/programs/education">
+                    <Link href="/programs#education">
                       Learn More <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                   </Button>
@@ -283,7 +283,7 @@ export default function HomePage() {
                     Ensuring children receive proper medical care, nutritious meals, and health education for their overall wellbeing.
                   </CardDescription>
                   <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0" asChild>
-                    <Link href="/programs/healthcare">
+                    <Link href="/programs#healthcare">
                       Learn More <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                   </Button>
@@ -308,7 +308,7 @@ export default function HomePage() {
                     Providing safe, secure living environments where children can grow and thrive in a nurturing atmosphere.
                   </CardDescription>
                   <Button variant="ghost" className="text-amber-600 hover:text-amber-700 p-0" asChild>
-                    <Link href="/programs/housing">
+                    <Link href="/programs#housing">
                       Learn More <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                   </Button>
@@ -320,7 +320,7 @@ export default function HomePage() {
       </section>
 
       {/* Impact Showcase */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
@@ -406,10 +406,10 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Upcoming Events */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center mb-16"
@@ -545,7 +545,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-amber-600 to-amber-700 text-white">
@@ -584,17 +584,7 @@ export default function HomePage() {
                 </Link>
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button size="lg" variant="outline" className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-4 text-lg" asChild>
-                <Link href="/volunteer">
-                  Become a Volunteer
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-            </motion.div>
+           
           </motion.div>
         </div>
       </section>

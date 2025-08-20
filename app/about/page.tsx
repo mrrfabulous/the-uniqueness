@@ -59,36 +59,28 @@ export default function AboutPage() {
     {
       name: "Daniel Abbah",
       role: "Founder & Executive Director",
-      image: "/placeholder-qoqte.png",
+      image: "/images/daniel.jpg",
       bio: "With over 15 years in child welfare and community development, Dr. Okafor founded the organization to address the critical needs of underprivileged children."
     },
     {
-      name: "JosepjInnocent",
-      role: "Program Director",
-      image: "/placeholder.svg?height=300&width=300",
+      name: "Halimah Ibrahim",
+      role: "Secretary",
+      image: "/images/Halima.jpg",
       bio: "Joseph oversees all our programs and ensures they meet the highest standards of care and effectiveness."
     },
     {
-      name: "Fatima Abdullahi",
-      role: "Community Outreach Manager",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Fatima leads our community engagement efforts and builds partnerships with local organizations."
-    },
-    {
-      name: "Matthew",
-      role: "Media Director",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Content creator."
+      name: "Matthew Ojimakocho Innocent",
+      role: "IT Manager",
+      image: "/images/Matthew.jpg",
+      bio: "Matthew Innocent, founder of Matthew’s Innovations, is an IT management expert and creative designer, turning ideas into impactful digital solutions."
     }
   ]
 
   const milestones = [
-    { year: "2019", event: "Foundation established in Lagos, Nigeria" },
-    { year: "2020", event: "First 100 children supported through education program" },
-    { year: "2021", event: "Healthcare program launched, serving 500+ children" },
-    { year: "2022", event: "Expanded to 5 states across Nigeria" },
-    { year: "2023", event: "Reached 1,000+ children milestone" },
-    { year: "2024", event: "International recognition and partnerships established" }
+    { year: "2022", event: "Foundation established in Lagos, Nigeria" },
+    { year: "2023", event: "First 100 children supported through education program" },
+    { year: "2024", event: "Healthcare program launched, serving 500+ children" },
+    { year: "2025", event: "Expanded to 5 states across Nigeria" }
   ]
 
   return (
@@ -147,7 +139,7 @@ export default function AboutPage() {
                 Our Foundation
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Transforming Lives Since 2019
+                Transforming Lives Since 2022
               </h2>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                 The Unique & Safe Child Foundation was born from a simple yet powerful belief: 
@@ -428,7 +420,7 @@ export default function AboutPage() {
           </motion.div>
           
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -470,7 +462,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <motion.div
+            {/* <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -480,7 +472,7 @@ export default function AboutPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </section>
@@ -514,18 +506,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-4 text-lg" asChild>
-                <Link href="/volunteer">
-                  <Users className="w-5 h-5 mr-2" />
-                  Become a Volunteer
-                </Link>
-              </Button>
-            </motion.div>
-            <motion.div
+           <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -5,25 +5,18 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
-import { Heart, Shield, Users, GraduationCap, Home, Building2, Copy, CheckCircle } from 'lucide-react'
+import { Heart, CreditCard, Shield, Users, GraduationCap, Home } from 'lucide-react'
 import Image from "next/image"
 
 export default function DonatePage() {
-  const [copiedField, setCopiedField] = useState('')
+  const [donationType, setDonationType] = useState('one-time')
+  const [amount, setAmount] = useState('5000')
+  const [customAmount, setCustomAmount] = useState('')
 
-  const bankDetails = {
-    accountNumber: '1013904905',
-    accountName: 'The Unique and Safe Child Foundation',
-    bankName: 'Keystone Bank'
-  }
-
-  const copyToClipboard = (text: string, field: string) => {
-    navigator.clipboard.writeText(text)
-    setCopiedField(field)
-    setTimeout(() => setCopiedField(''), 2000)
-  }
+  const predefinedAmounts = ['2500', '5000', '10000', '25000', '50000', '100000']
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -55,140 +48,110 @@ export default function DonatePage() {
                   Make Your Donation
                 </CardTitle>
                 <CardDescription>
-                  Use our bank details below to make your contribution and help transform children's lives.
+                  Choose your donation amount and frequency to support our mission.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                {/* Bank Details */}
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
-                  <div className="flex items-center mb-4">
-                    <Building2 className="w-5 h-5 text-amber-600 mr-2" />
-                    <h3 className="text-lg font-semibold text-amber-800">Bank Transfer Details</h3>
+                {/* Donation Type */}
+                <div>
+                  <Label className="text-base font-medium mb-3 block">Donation Type</Label>
+                  <RadioGroup value={donationType} onValueChange={setDonationType} className="flex space-x-6">
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="one-time" id="one-time" />
+                      <Label htmlFor="one-time">One-time</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="monthly" id="monthly" />
+                      <Label htmlFor="monthly">Monthly</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                {/* Amount Selection */}
+                <div>
+                  <Label className="text-base font-medium mb-3 block">Select Amount (NGN)</Label>
+                  <div className="grid grid-cols-3 gap-3 mb-4">
+                    {predefinedAmounts.map((presetAmount) => (
+                      <Button
+                        key={presetAmount}
+                        variant={amount === presetAmount ? "default" : "outline"}
+                        className={amount === presetAmount ? "bg-amber-600 hover:bg-amber-700" : ""}
+                        onClick={() => {
+                          setAmount(presetAmount)
+                          setCustomAmount('')
+                        }}
+                      >
+                        ₦{parseInt(presetAmount).toLocaleString()}
+                      </Button>
+                    ))}
                   </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg border">
-                      <div>
-                        <Label className="text-sm text-gray-600">Account Number</Label>
-                        <div className="font-mono text-lg font-semibold">{bankDetails.accountNumber}</div>
-                      </div>
-                      <div className="relative">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => copyToClipboard(bankDetails.accountNumber, 'account')}
-                          className="text-amber-600 hover:text-amber-700"
-                        >
-                          {copiedField === 'account' ? (
-                            <CheckCircle className="w-4 h-4" />
-                          ) : (
-                            <Copy className="w-4 h-4" />
-                          )}
-                        </Button>
-                        {copiedField === 'account' && (
-                          <div className="absolute -top-8 right-0 bg-green-600 text-white text-xs px-2 py-1 rounded shadow-lg">
-                            Copied!
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg border">
-                      <div>
-                        <Label className="text-sm text-gray-600">Account Name</Label>
-                        <div className="font-semibold">{bankDetails.accountName}</div>
-                      </div>
-                      <div className="relative">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => copyToClipboard(bankDetails.accountName, 'name')}
-                          className="text-amber-600 hover:text-amber-700"
-                        >
-                          {copiedField === 'name' ? (
-                            <CheckCircle className="w-4 h-4" />
-                          ) : (
-                            <Copy className="w-4 h-4" />
-                          )}
-                        </Button>
-                        {copiedField === 'name' && (
-                          <div className="absolute -top-8 right-0 bg-green-600 text-white text-xs px-2 py-1 rounded shadow-lg">
-                            Copied!
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg border">
-                      <div>
-                        <Label className="text-sm text-gray-600">Bank Name</Label>
-                        <div className="font-semibold">{bankDetails.bankName}</div>
-                      </div>
-                      <div className="relative">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => copyToClipboard(bankDetails.bankName, 'bank')}
-                          className="text-amber-600 hover:text-amber-700"
-                        >
-                          {copiedField === 'bank' ? (
-                            <CheckCircle className="w-4 h-4" />
-                          ) : (
-                            <Copy className="w-4 h-4" />
-                          )}
-                        </Button>
-                        {copiedField === 'bank' && (
-                          <div className="absolute -top-8 right-0 bg-green-600 text-white text-xs px-2 py-1 rounded shadow-lg">
-                            Copied!
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 p-3 bg-amber-100 rounded-lg">
-                    <p className="text-sm text-amber-800">
-                      <strong>Instructions:</strong> Please use your full name as the transfer description/narration 
-                      and send us a screenshot of your transfer receipt via email or WhatsApp for confirmation.
-                    </p>
+                  <div>
+                    <Label htmlFor="custom-amount" className="text-sm text-gray-600">Custom Amount</Label>
+                    <Input
+                      id="custom-amount"
+                      type="number"
+                      placeholder="Enter custom amount"
+                      value={customAmount}
+                      onChange={(e) => {
+                        setCustomAmount(e.target.value)
+                        setAmount('')
+                      }}
+                      className="mt-1"
+                    />
                   </div>
                 </div>
 
-                {/* Contact Information for Confirmation */}
+                {/* Personal Information */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="firstName">First Name *</Label>
+                    <Input id="firstName" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="lastName">Last Name *</Label>
+                    <Input id="lastName" required />
+                  </div>
+                </div>
+
                 <div>
-                  <Label className="text-base font-medium mb-3 block">Send Transfer Confirmation To:</Label>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <Label className="text-sm text-gray-600">Email</Label>
-                      <div className="font-semibold">info@uniquesafechild.org</div>
-                    </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <Label className="text-sm text-gray-600">WhatsApp</Label>
-                      <div className="font-semibold">+234 816 871 2903</div>
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input id="email" type="email" required />
+                </div>
+
+                <div>
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input id="phone" type="tel" />
+                </div>
+
+                {/* Payment Method */}
+                <div>
+                  <Label className="text-base font-medium mb-3 block">Payment Method</Label>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="card" defaultChecked />
+                      <Label htmlFor="card" className="flex items-center">
+                        <CreditCard className="w-4 h-4 mr-2" />
+                        Credit/Debit Card
+                      </Label>
                     </div>
                   </div>
                 </div>
 
-                {/* Donor Information */}
-                <div>
-                  <Label className="text-base font-medium mb-3 block">Your Information (Optional)</Label>
-                  <div className="grid md:grid-cols-2 gap-4">
+                {/* Card Details */}
+                <div className="space-y-4 p-4 bg-gray-50 rounded-lg">
+                  <div>
+                    <Label htmlFor="cardNumber">Card Number *</Label>
+                    <Input id="cardNumber" placeholder="1234 5678 9012 3456" required />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" />
+                      <Label htmlFor="expiry">Expiry Date *</Label>
+                      <Input id="expiry" placeholder="MM/YY" required />
                     </div>
                     <div>
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" />
+                      <Label htmlFor="cvv">CVV *</Label>
+                      <Input id="cvv" placeholder="123" required />
                     </div>
-                  </div>
-                  <div className="mt-4">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="For donation receipt and updates" />
-                  </div>
-                  <div className="mt-4">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" />
                   </div>
                 </div>
 
@@ -204,9 +167,18 @@ export default function DonatePage() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 mt-6">
+                {/* Submit Button */}
+                <Button 
+                  size="lg" 
+                  className="w-full bg-amber-600 hover:bg-amber-700 text-lg py-6"
+                >
+                  <Heart className="w-5 h-5 mr-2" />
+                  Donate ₦{customAmount ? parseInt(customAmount).toLocaleString() : parseInt(amount).toLocaleString()} {donationType === 'monthly' ? 'Monthly' : 'Now'}
+                </Button>
+
+                <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
                   <Shield className="w-4 h-4" />
-                  <span>Your information is secure and will only be used for donation confirmation</span>
+                  <span>Your donation is secure and encrypted</span>
                 </div>
               </CardContent>
             </Card>
